@@ -40,6 +40,7 @@ def get_page(offset):
 def get_images(json):
     if json.get('data'):
         data = json.get('data')
+        for item in data:
             if item.get('title') is None:
                 continue
             title = re.sub('[\t|]', '', item.get('title'))
